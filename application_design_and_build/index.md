@@ -50,5 +50,16 @@
 
 ### Exam scenarios
 
+- Build an OCI image from a directory in which the Dockerfile is not present.
+    - Use the `docker build` command with the `-f` flag.
+- Fix an image problem without pushing to the registry.
+    - Use the `docker image tag OLD_TAG NEW_TAG`
+- Create a tar file.
+    - Use the `docker save REPO:TAG --output image.tar`.
+
 ### Recap and Test
+
+- Build images from Doclkerfiles.
+- Name and tag images.
+- Save images as OCI archives.
 
