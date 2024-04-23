@@ -20,9 +20,33 @@
     - It's possible to create an image from a running container:
         - `docker commit CONTAINER REPO:TAG`.
     - `docker image tag OLD_TAG NEW_TAG` to retag an image.
-    - `docker image rm REPO:TAG|IMAGE_ID` to delete an image.
+    - `docker image rmi REPO:TAG|IMAGE_ID` to delete an image.
 
 ### Managing images with other tools
+
+    - `buildah`:
+        - Image management.
+        - Creates and manages OCI images.
+        - Only does images.
+        - Doesn't need a Dockerfile.
+        - Commands:
+            - `buildah build -t REPO:TAG`.
+            - `buildah commit CONTAINER REPO:TAG`.
+            - `buildah tag OLD_TAG NEW_TAG` to retag an image.
+            - `buildah rmi REPO:TAG|IMAGE_ID`
+    - `podman`:
+        - Image and Container management.
+        - Creates and manages OCI images.
+        - Manages entire containers lifecycle.
+        - Supports Docker commands.
+        - There is NO deamon running.
+        - Uses `buildah` to create images.
+        - Commands:
+            - `podman image build -t REPO:TAG`.
+            - `podman commit CONTAINER REPO:TAG`.
+            - `podman image tag OLD_TAG NEW_TAG` to retag an image.
+            - `podman rmi REPO:TAG|IMAGE_ID`
+            - `podman save REPO:TAG | gzip > image.tar.gz`.
 
 ### Exam scenarios
 
